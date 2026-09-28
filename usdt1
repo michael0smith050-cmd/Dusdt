@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add DUSDT</title>
+</head>
+<body style="font-family:Arial;text-align:center;padding-top:100px;">
+  <h2>DemoUSDT (DUSDT)</h2>
+  <button onclick="addToken()" style="padding:15px 30px;font-size:18px;">
+    Add Token to MetaMask
+  </button>
+
+  <script>
+    async function addToken() {
+      await window.ethereum.request({
+        method: "wallet_watchAsset",
+        params: {
+          type: "ERC20",
+          options: {
+            address: "0x82B509A731D47D1373fE161359Acc1E5B4e2ba95",
+            symbol: "DUSDT",
+            decimals: 18
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
